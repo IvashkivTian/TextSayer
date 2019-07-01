@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<div id="header_list">
+  <span id="btn_back_to_main">
+      
+    <a routerLink="/main">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+  </span>
+  <span>Create new item</span>
+</div>
+<input type="text" id="inpList" placeholder="New item title.." #title autocomplete="off">
+<span id="add_item" >
+    <a routerLink="/main" (click)="addItem(title.value);title.value =''">
+      <i class="fas fa-angle-right"></i>
+    </a>
+</span>

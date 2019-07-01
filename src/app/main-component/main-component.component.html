@@ -1,0 +1,16 @@
+<div id="header">
+  <h1>Sayer</h1>
+</div>
+<ul>
+  <li *ngFor=" let item of itemService.listItems" (click)="buttonDel()">
+    <h5>{{item.name}}</h5>
+    <span *ngIf="isBtnShow == true">
+      <a routerLink="/item/{{item.id}}">{{item.comments.length}}</a>
+    </span>
+    <p (click)="deleteItem(item.id)" *ngIf="isBtnShow == false">Delete</p>
+  </li>
+</ul>
+
+<button id="button">
+  <a routerLink="/createItem">+</a>
+</button>

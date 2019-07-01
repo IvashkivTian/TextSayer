@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<div *ngIf="item">
+    <div id="header_comment">
+        <span id="btn_back_to_list">
+            
+          <a routerLink="/main" >
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </span>
+        <h2>{{item.name}}</h2>
+      </div>
+      <ul>
+        <li *ngFor="let comment of item.comments" class="listComments">
+          <span>{{comment}}</span>
+        </li>
+        
+      </ul>
+      <div id="inp_comment">
+        <input type="text" id="inpComm" placeholder="New comment goes here.."  autocomplete="off" #comment>
+        
+        <span id="add_comment" (click)="addComment(comment.value); comment.value =''">
+          <i class="fas fa-angle-right"></i>
+        </span>
+      </div>
+</div>
